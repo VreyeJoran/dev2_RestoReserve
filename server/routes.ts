@@ -1,14 +1,19 @@
 import express, { Request, Response, Router } from "express";
+import { getAllRestaurants, Restaurant } from "./services/RestoService";
 
 const router: Router = express.Router();
 
 // Homepagina
-router.get("/", (req: Request, res: Response): void => {
-  res.render("index", { title: "Resto Reserve", stylesheet: "style.css" });
+router.get("/", async (req: Request, res: Response) => {
+    const restaurants: Restaurant[] = await getAllRestaurants();
+
+    res.render("index", { title: "Resto Reserve", stylesheet: "style.css", restaurants: restaurants });
 });
 
-router.get("/afspraken", (req: Request, res: Response): void => {
-    res.render("afspraken", { title: "Resto Reserve", stylesheet: "style.css" })
-})
+router.get("/detail/:id", async (req: Request, res: Response) => {
+    const restaurant: Restaurant[] = await getRestaurantById();
+
+    res.render("index", { title: "Resto Reserve", stylesheet: "style.css", restaurants: restaurants });
+});
 
 export default router;

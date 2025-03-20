@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="/styles/<%= stylesheet %>">
 </head>
 <body>
-    <%- body %>
+    <header>
+        <a href="/" class="brand">RestoReserve</a>
+        <form class="search"><input type="search"><button type="submit">Zoeken</button></form>
+        <div class="user">
+            <a href="/afspraken">Mijn afspraken <span class="badge">2</span></a>
+        </div>
+    </header>
+
+    <main>
+        <%- body %>
+    </main>
+
+    <footer>
+        &copy; RestoReserve - VreyeJoran - Arteveldehogeschool
+    </footer>
 </body>
 </html>
