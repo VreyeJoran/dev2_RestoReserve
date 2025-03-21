@@ -3,7 +3,7 @@ import sql from "./db";
 
 // Interface voor een restaurant
 export interface Restaurant {
-  id?: number;
+  id: number;
   name?: string;
   city?: string;
   image?: string;

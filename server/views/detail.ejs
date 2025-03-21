@@ -2,10 +2,10 @@
 
     <div class="info">
         <div class="text">
-            <h1>Zilte <sup>***</sup></h1>
-            <p>Antwerpen</p>
+            <h1><%= restaurant.name %><sup><%= '*'.repeat(restaurant.stars) %></sup></h1>
+            <p><%= restaurant.city %></p>
         </div>
-        <img src="images/zilte.jpg">
+        <img src="images/<%= restaurant.image %>">
     </div>
     
     

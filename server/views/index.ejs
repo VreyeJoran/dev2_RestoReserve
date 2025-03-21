@@ -3,7 +3,7 @@
         <p>Er zijn geen restaurants beschikbaar</p>
       <% } else { %>
           <% restaurants.forEach((restaurant) => { %>
-            <a href="/detail" class="list-item">
+            <a href="/detail/<%= restaurant.id %>" class="list-item">
                 <img src="images/<%= restaurant.image %>">
                 <div class="name"><%= restaurant.name %> <sup><%= '*'.repeat(restaurant.stars) %></sup></div>
                 <div class="city"><%= restaurant.city %></div>

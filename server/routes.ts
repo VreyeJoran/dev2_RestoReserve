@@ -11,9 +11,10 @@ router.get("/", async (req: Request, res: Response) => {
 });
 
 router.get("/detail/:id", async (req: Request, res: Response) => {
-    // const restaurant: Restaurant[] = await getRestaurantById();
+    const id: number = parseInt(req.params.id);
+    const restaurant: Restaurant[] = await getRestaurantById(id);
 
-    // res.render("index", { title: "Resto Reserve", stylesheet: "style.css", restaurants: restaurants });
+    res.render("detail", { title: "Resto Reserve", stylesheet: "style.css", restaurant: restaurant });
 });
 
 export default router;
